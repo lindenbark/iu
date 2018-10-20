@@ -2,15 +2,44 @@
 
 :local {
     $side-width: 230px;
+    $frame-width: 9px;
+    $header-height: 30px;
+    $footer-height: 30px;
     .flashTimeline {
+        position: relative;
         display: flex;
         flex-direction: column;
         width: 100%;
         height: 200px;
         color: $oc-gray-0;
+        > .playhead {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            width: 1px;
+            height: calc(100% - #{$footer-height});
+            &::before {
+                content: '';
+                flex: 0 0 $header-height;
+                position: relative;
+                box-sizing: border-box;
+                left: $frame-width * -0.5;
+                width: $frame-width;
+                border: 1px solid $oc-red-7;
+            }
+            &::after {
+                content: '';
+                flex: 1 0 0;
+                position: relative;
+                box-sizing: border-box;
+                left: -0.5px;
+                background-color: $oc-red-7;
+            }
+        }
     }
     .flashTimelineHeader {
-        flex: 0 0 30px;
+        box-sizing: border-box;
+        flex: 0 0 $header-height;
         display: flex;
         background-color: $oc-gray-5;
         border-bottom: 1px solid $oc-gray-6;
@@ -38,7 +67,8 @@
         }
     }
     .flashTimelineFooter {
-        flex: 0 0 30px;
+        box-sizing: border-box;
+        flex: 0 0 $footer-height;
         display: flex;
         background-color: $oc-gray-5;
         border-top: 1px solid $oc-gray-6;

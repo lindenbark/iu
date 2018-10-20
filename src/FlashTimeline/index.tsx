@@ -20,6 +20,12 @@ export default class FlashTimeline extends React.Component<FlashTimelineProps> {
             <div className={styles.flashTimeline}>
                 <FlashTimelineHeader zoom={zoom} />
                 <FlashTimelineLayers layers={layers} zoom={zoom} />
+                <div
+                    className={styles.playhead}
+                    style={{
+                        left: `${currentFrame * 9 + 230 + 4.5}px`,
+                    }}
+                />
                 <FlashTimelineFooter zoom={zoom} />
             </div>
         );
