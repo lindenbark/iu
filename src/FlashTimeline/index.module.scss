@@ -1,5 +1,50 @@
+@import 'open-color/open-color.scss';
+
 :local {
+    $side-width: 230px;
     .flashTimeline {
-        color: red;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 200px;
+        color: $oc-gray-0;
+    }
+    .flashTimelineHeader {
+        flex: 0 0 30px;
+        display: flex;
+        background-color: $oc-gray-5;
+        border-bottom: 1px solid $oc-gray-6;
+        > .side {
+            width: $side-width;
+            border-right: 1px solid $oc-gray-8;
+        }
+    }
+    .flashTimelineLayers {
+        flex: 1 0 0;
+        overflow-y: scroll;
+        background-color: $oc-gray-3;
+    }
+    .flashTimelineLayer {
+        margin-top: -1px;
+        box-sizing: border-box;
+        display: flex;
+        height: 25px;
+        border-top: 1px solid $oc-gray-5;
+        border-bottom: 1px solid $oc-gray-5;
+        background-color: $oc-gray-4;
+        > .side {
+            width: $side-width;
+            border-right: 1px solid $oc-gray-5;
+        }
+    }
+    .flashTimelineFooter {
+        flex: 0 0 30px;
+        display: flex;
+        background-color: $oc-gray-5;
+        border-top: 1px solid $oc-gray-6;
+        > .side {
+            width: $side-width;
+            border-right: 1px solid $oc-gray-6;
+        }
     }
 }
