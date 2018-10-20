@@ -1,0 +1,12 @@
+/node_modules
+/.docz
+
+/tsconfig.json
+/.editorconfig
+
+/docs
+
+**/*.mdx
+**/*.sass
+**/*.ts
+!*.d.ts

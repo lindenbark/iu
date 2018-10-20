@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "jsx": "react",
+        "outDir": "lib",
+        "declaration": true,
+        "lib": [
+            "dom",
+            "es2018"
+        ],
+        "strict": true,
+        "noUnusedLocals": true
+    },
+    "exclude": [
+        "node_modules",
+        "lib"
+    ]
+}

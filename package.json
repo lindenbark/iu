@@ -1,0 +1,41 @@
+{
+  "name": "iu",
+  "version": "0.0.0",
+  "description": "react ui component library",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build": "npm run build:lib && npm run build:docz",
+    "build:lib": "rimraf ./lib && node-sass src -o lib && tsc",
+    "build:docz": "docz build",
+    "dev": "stmux -w always -e '' -- [ [ 'npm run dev:sass' : 'npm run dev:tsc' : 'npm run dev:prettier' ] .. [ 'npm run dev:docz' : 'echo \"\\n  이 화면은 stmux가 그려주는 화면입니다.\\n  [ctrl+a k] 명령으로 종료할 수 있습니다.\"' ] ]",
+    "dev:docz": "docz dev",
+    "dev:sass": "node-sass src -o lib -w",
+    "dev:tsc": "tsc -w",
+    "dev:prettier": "onchange '*.js' '@(src|types)/**/*.@(ts|tsx|scss)' -- prettier --write {{changed}}",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Team Lindenbark",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "open-color": "^1.6.3"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.6",
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
+    "docz": "^0.12.5",
+    "docz-plugin-css": "^0.11.0",
+    "node-sass": "^4.9.3",
+    "onchange": "^5.0.2",
+    "prettier": "^1.14.3",
+    "rimraf": "^2.6.2",
+    "stmux": "^1.5.5",
+    "typescript": "^3.1.1"
+  }
+}
